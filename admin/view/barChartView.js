@@ -1,20 +1,20 @@
 /**
  * Created by Jun on 2015/3/30.
  */
-define(function(require, exports, module) {
+define(function (require, exports, module) {
 
     var barChartView = Backbone.View.extend({
 
-        id : "",
+        id: "",
 
-        init : function() {
-
+        init: function () {
+            //this.id = "barChart" + $("div[id^='chart']").length;
         },
 
-        render : function() {
+        render: function () {
             var lastId = $("div[id^='chart']").length;
             //基于准备好的dom，初始化echarts图表
-            var myChart = echarts.init(document.getElementById('chart'+lastId));
+            var myChart = echarts.init(document.getElementById('chart' + lastId));
 
             var option = {
                 tooltip: {
@@ -45,14 +45,15 @@ define(function(require, exports, module) {
 
             //为echarts对象加载数据
             myChart.setOption(option);
-            return this;
+            window.charts.push(myChart);
+            //return this;
         },
 
-        events : {
-            "click $('div[id^=\'chart\']:last')" : "addNew"
+        events: {
+            "click $('div[id^=\'chart\']:last')[0]": "addNew"
         },
 
-        addNew : function() {//新增图表
+        addNew: function () {//新增图表
             alert('new');
         }
 
