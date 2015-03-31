@@ -1,27 +1,29 @@
 /**
  * Created by Jun on 2015/3/30.
  */
-define(function(require, exports, module) {
+define(function (require, exports, module) {
     var ChartView = Backbone.View.extend({
 
-        template : _.template(require("../tpl/chartArea.html")),
+        template: _.template(require("../tpl/chartArea.html")),
 
-        id : "",
+        id: "",
 
-        init : function() {
+        class: "col-md-6 col-sm-6",
+
+        init: function () {
 
         },
 
-        render : function() {
+        render: function () {
             this.$el.html(this.template(this.model.toJSON()));
             return this;
         },
 
-        events : {
-            "click #addChart" : "addNew"
+        events: {
+            "click #123456": "addNew"
         },
 
-        addNew : function() {//新增图表
+        addNew: function () {//新增图表
             alert('new');
         }
 

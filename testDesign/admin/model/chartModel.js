@@ -5,7 +5,7 @@ define(function(require, exports, module){
 
     var Chart = Backbone.Model.extend({
         defaults : {
-            "id" : "123456",
+            "id" : "",
             "filter" : {
                 "one":"oneItem",
                 "two":"twoItem",

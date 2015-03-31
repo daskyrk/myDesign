@@ -10,6 +10,12 @@ define(function(require, exports, module) {
         var chartView = new ChartView({
             model : chartModel
         });
-        $(".row").append(chartView.render().$el);
+
+        $("#addChart").click(function () {
+            $(".row").append(chartView.render().$el);
+        })
     });
+
+
+
 });
