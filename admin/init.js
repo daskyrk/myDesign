@@ -11,8 +11,10 @@ define(function(require, exports, module) {
             model : chartModel
         });
 
+        $(".row").append(chartView.render().$el);
         $("#addChart").click(function () {
             $(".row").append(chartView.render().$el);
+            alert('df');
         })
     });
 
